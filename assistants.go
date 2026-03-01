@@ -5,9 +5,10 @@ package api
 import (
 	json "encoding/json"
 	fmt "fmt"
-	internal "github.com/VapiAI/server-sdk-go/v505/internal"
 	big "math/big"
 	time "time"
+
+	internal "github.com/VapiAI/server-sdk-go/v505/internal"
 )
 
 var (
@@ -6060,6 +6061,7 @@ var (
 	updateAssistantDtoFieldCredentialIds                    = big.NewInt(1 << 29)
 	updateAssistantDtoFieldServer                           = big.NewInt(1 << 30)
 	updateAssistantDtoFieldKeypadInputPlan                  = big.NewInt(1 << 31)
+	updateAssistantDtoFieldSilenceTimeoutSeconds            = big.NewInt(1 << 32)
 )
 
 type UpdateAssistantDto struct {
@@ -6180,6 +6182,8 @@ type UpdateAssistantDto struct {
 	// 3. org.serverUrl
 	Server          *Server          `json:"server,omitempty" url:"-"`
 	KeypadInputPlan *KeypadInputPlan `json:"keypadInputPlan,omitempty" url:"-"`
+
+	SilenceTimeoutSeconds *int `json:"silenceTimeoutSeconds,omitempty" url:"-"`
 
 	// Private bitmask of fields set to an explicit value and therefore not to be omitted
 	explicitFields *big.Int `json:"-" url:"-"`
@@ -6414,4 +6418,9 @@ func (u *UpdateAssistantDto) SetServer(server *Server) {
 func (u *UpdateAssistantDto) SetKeypadInputPlan(keypadInputPlan *KeypadInputPlan) {
 	u.KeypadInputPlan = keypadInputPlan
 	u.require(updateAssistantDtoFieldKeypadInputPlan)
+}
+
+func (u UpdateAssistantDto) SetSilenceTimeoutSeconds(silenceTimeoutSeconds *int) {
+	u.SilenceTimeoutSeconds = silenceTimeoutSeconds
+	u.require(updateAssistantDtoFieldSilenceTimeoutSeconds)
 }
