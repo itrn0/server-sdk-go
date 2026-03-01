@@ -8,7 +8,7 @@ import (
 	big "math/big"
 	time "time"
 
-	internal "github.com/VapiAI/server-sdk-go/v505/internal"
+	internal "github.com/itrn0/server-sdk-go/internal"
 )
 
 var (

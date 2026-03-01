@@ -4,10 +4,10 @@ package structuredoutputs
 
 import (
 	context "context"
-	v505 "github.com/VapiAI/server-sdk-go/v505"
-	core "github.com/VapiAI/server-sdk-go/v505/core"
-	internal "github.com/VapiAI/server-sdk-go/v505/internal"
-	option "github.com/VapiAI/server-sdk-go/v505/option"
+	v505 "github.com/itrn0/server-sdk-go"
+	core "github.com/itrn0/server-sdk-go/core"
+	internal "github.com/itrn0/server-sdk-go/internal"
+	option "github.com/itrn0/server-sdk-go/option"
 	http "net/http"
 )
 

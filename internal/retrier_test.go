@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/VapiAI/server-sdk-go/v505/core"
+	"github.com/itrn0/server-sdk-go/core"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

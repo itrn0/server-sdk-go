@@ -5,7 +5,7 @@ package api
 import (
 	json "encoding/json"
 	fmt "fmt"
-	internal "github.com/VapiAI/server-sdk-go/v505/internal"
+	internal "github.com/itrn0/server-sdk-go/internal"
 	io "io"
 	big "math/big"
 	time "time"

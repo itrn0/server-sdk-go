@@ -55,9 +55,9 @@ func (r *RequestOptions) ToHeader() http.Header {
 func (r *RequestOptions) cloneHeader() http.Header {
 	headers := r.HTTPHeader.Clone()
 	headers.Set("X-Fern-Language", "Go")
-	headers.Set("X-Fern-SDK-Name", "github.com/VapiAI/server-sdk-go/v505")
+	headers.Set("X-Fern-SDK-Name", "github.com/itrn0/server-sdk-go")
 	headers.Set("X-Fern-SDK-Version", "v0.10.1")
-	headers.Set("User-Agent", "github.com/VapiAI/server-sdk-go/AUTO")
+	headers.Set("User-Agent", "github.com/itrn0/server-sdk-go/AUTO")
 	return headers
 }
 
