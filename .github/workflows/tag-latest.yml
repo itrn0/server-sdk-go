@@ -1,0 +1,27 @@
+name: tag-latest
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  tag-latest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Update latest tag
+        run: |
+          # Skip pre-release tags (e.g. v1.0.0-beta)
+          if [[ "${GITHUB_REF_NAME}" == *-* ]]; then
+            echo "Pre-release tag detected, skipping latest update."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag -f latest
+          git push origin latest --force
