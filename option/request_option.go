@@ -3,7 +3,7 @@
 package option
 
 import (
-	core "github.com/VapiAI/server-sdk-go/v505/core"
+	core "github.com/itrn0/server-sdk-go/core"
 	http "net/http"
 	url "net/url"
 )
